@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useNavigate, Link } from 'react-router-dom';
 import './App.css';
+import Game from './components/Game';
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
 
           <Routes>
             <Route path='/' >Home</Route>
-            <Route path='/breaker' >Breaker</Route>
+            <Route path='/breaker' element={<Game />} >Game</Route>
           </Routes>
         </div>
       </BrowserRouter>
