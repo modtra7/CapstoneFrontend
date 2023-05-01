@@ -4,8 +4,8 @@ export default {
         y: 200,
         xMove: 5,
         yMove: 5,
-        rad: 20,
-        speed: 10
+        rad: 12,
+        speed: [6, 12]
     },
     brickObj: {
         x: 0.5,
@@ -13,10 +13,17 @@ export default {
         width: 800 / 10 - 1,
         height: 20,
         density: 2,
-        colors: ["white", "gray", 'lightblue']
+        colors: ["white", 'lightblue']
     },
     player: {
         lives: 3,
-        score: 0
+        score: 0,
+        level: 1
+    },
+    paddleProps: {
+        height: 20,
+        width: 100,
+        x: 100,
+        colors: "yellow"
     }
 }
