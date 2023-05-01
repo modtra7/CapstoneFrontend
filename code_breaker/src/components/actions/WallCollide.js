@@ -6,7 +6,6 @@ const WallCollision = (ballObj, canvas, player, paddleProps) => {
         ballObj.y = paddleProps.y - 10
         ballObj.xMove = 6 * (Math.random() * 2 - 1)
         ballObj.yMove = -6
-        ballObj.yMove *= -1
     }
 
     if (ballObj.y - ballObj.rad <= 0) {

@@ -5,7 +5,7 @@ export default {
         xMove: 5,
         yMove: 5,
         rad: 12,
-        speed: [6, 12]
+        speed: 3
     },
     brickObj: {
         x: 0.5,

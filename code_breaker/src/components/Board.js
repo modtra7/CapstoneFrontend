@@ -7,6 +7,8 @@ import MakeBrick from "./Brick";
 import BrickCollision from "./actions/BrickCollide";
 import PaddleHit from "./actions/PaddleCollide";
 import Stats from "./PlayerStats";
+import Broken from "./actions/Break";
+import ResetBall from "./actions/ResetBall";
 
 
 let {ballObj, paddleProps, brickObj, player} = data
@@ -28,14 +30,25 @@ const Board = () => {
                 bricks = newBrickSet
             }
 
-            
             ctx.clearRect(0, 0, canvas.width, canvas.height)
             
             Stats(ctx, player, canvas)
 
+            if (player.lives === 0) {
+                alert("Game Over!!")
+                bricks.length = 0
+                player.lives = 3
+                player.level = 1
+                player.score = 0
+                ResetBall(ballObj, canvas, paddleProps)
+                bricks.length = 0
+            }
+
             bricks.map((brick) => {
                 return brick.draw(ctx)
             })
+
+            Broken(bricks, player, canvas, ballObj)
             
             BallMovement(ctx, ballObj)
 

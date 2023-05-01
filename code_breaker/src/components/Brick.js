@@ -18,7 +18,7 @@ const MakeBrick = (level, bricks, canvas, brick) => {
             brick.y + (y * (brick.height + 1)),
             brick.width,
             brick.height,
-            brick.colors
+            [getRandomColor(), getRandomColor()]
         )
         newBricks.push(newBrick)
 
@@ -58,6 +58,12 @@ class Brick {
         ctx.strokeRect(this.x, this.y, this.width, this.height)
         ctx.fill()
     }
+}
+
+const getRandomColor = () => {
+    const colors = ['#ff7f50', '#6495ed', '#ffa07a', '#ff69b4', '#ba55d3', '#cd5c5c'];
+    return colors[Math.floor(Math.random() * colors.length)]
+
 }
 
 export default MakeBrick
