@@ -1,4 +1,6 @@
 import React, {Component, useEffect, useRef} from "react";
+import BallMovement from "./BallMovement";
+import data from "../data";
 
 let x = 0
 const Board = () => {
@@ -10,15 +12,12 @@ const Board = () => {
             const canvas = canvasRef.current
             const ctx = canvas.getContext('2d')
 
+            let {ballObj} = data
+
             ctx.clearRect(0, 0, canvas.width, canvas.height)
-            ctx.beginPath()
-            ctx.arc(x, 50, 20, 0, 2 * Math.PI)
-            ctx.strokeStyle = 'black'
-            ctx.strokeWidth = 4
-            ctx.fill()
-            ctx.stroke()
-            x += 8
-            console.log('circle creation');
+            
+            BallMovement(ctx, ballObj)
+
             requestAnimationFrame(render)
         }
         
