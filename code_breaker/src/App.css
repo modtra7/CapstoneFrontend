@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+#canvas {
+  background-color: #000079;
+  border: 1px solid darkblue;
+}
